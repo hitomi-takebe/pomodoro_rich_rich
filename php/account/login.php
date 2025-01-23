@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <title>ログイン</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="../../css/reset.css">
     <link rel="stylesheet" href="../../css/style.css">
     <style>
-        .submit {
-            max-width: 300px;
-            margin-bottom: 20px;
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <header>
-    <!-- <p class="link_title"><a href="form.php">入力</a></p> -->
-    <!-- <p class="link_title"><a href="select.php">一覧表示</a></p> -->
+    <!-- <p class="link_title"><a href="../form.php">入力</a></p> -->
+    <!-- <p class="link_title"><a href="../select.php">一覧表示</a></p> -->
     <p class="link_title"><a href="../../index.php">使い方</a></p>
     <!-- <p class="link_title"><a href="logout.php">ログアウト</a></p> -->
     <!-- <p class="link_title"><a href="login.php">ログイン</a></p> -->
+    <p class="link_title"><a href="../register/index.php">ユーザー登録</a></p>
 </header>
 
 <body>
-    <h1>ログインページ</h1>
-    <!-- <   !-- lLOGINogin_act.php は認証処理用のPHPです。 -->
-    <form name="form1" action="login_act.php" method="post">
-        ID:<input type="text" name="lid" /></br>
-        PW:<input type="password" name="lpw" /><br>
-        <input type="submit" class="submit" value="LOGIN" />
-    </form>
+    <div class="card">
+        <span class="card__title">ログインページ</span>
+        <p class="card__content">サービスを使うためにログインをお願いします。</p>
+        <div class="card__form">
+            <form action="login_act.php" method="post">
+                <label for="lid">メールアドレス:</label>
+                <input type="lid" class="email" name="lid" required>
+                <label for="lpw">パスワード:</label>
+                <input type="lpw" class="password" name="lpw" placeholder="Your Password"><br>
+                <input type="submit" class="submit" value="ログイン">
+            </form>
+            <p class="submit"><a href="../index.php">会員登録をする</a></p>
+        </div>
+    </div>
 </body>
-
-</html>

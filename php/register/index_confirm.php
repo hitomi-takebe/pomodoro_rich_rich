@@ -16,6 +16,15 @@
     </style>
 </head>
 
+<header>
+    <!-- <p class="link_title"><a href="form.php">入力</a></p> -->
+    <!-- <p class="link_title"><a href="select.php">一覧表示</a></p> -->
+    <p class="link_title"><a href="../../index.php">使い方</a></p>
+    <!-- <p class="link_title"><a href="logout.php">ログアウト</a></p> -->
+    <!-- <p class="link_title"><a href="login.php">ログイン</a></p> -->
+</header>
+
+
 <body>
     <?php
     // 入力データの取得
@@ -39,7 +48,7 @@
             <input type="hidden" name="lpw" value="<?= $lpw ?>">
             <input type="submit" class="submit" value="送信">
         </form>
-        <p class="submit"><a href="../../index.php">修正する</a></p>
+        <p class="submit"><a href="index.php">修正する</a></p>
     </div>
 
 </body>

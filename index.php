@@ -30,6 +30,7 @@ $_SESSION['chk_ssid'] != session_id();
         <p class="link_title"><a href="php/account/logout.php">ログアウト</a></p>
     <?php else: ?>
         <p class="link_title"><a href="php/account/login.php">ログイン</a></p>
+        <p class="link_title"><a href="php/register/index.php">ユーザー登録</a></p>
     <?php endif; ?>
 </header>
 
