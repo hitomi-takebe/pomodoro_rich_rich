@@ -11,32 +11,33 @@ $lpw = $_POST['lpw'];
 require_once('../funcs.php');
 $pdo = db_conn();
 
-//2. データ登録SQL作成
-// gs_user_tableに、IDとWPがあるか確認する。
-// $stmt = $pdo->prepare('SELECT * FROM gs_user_table where lid = :lid AND lpw = :lpw;');
-$stmt = $pdo->prepare('SELECT * FROM user where lid = :lid AND lpw = :lpw;');
+// SQL文の準備
+$stmt = $pdo->prepare('SELECT * FROM user WHERE lid = :lid');
 $stmt->bindValue(':lid', $lid, PDO::PARAM_STR);
-$stmt->bindValue(':lpw', $lpw, PDO::PARAM_STR);
-$status = $stmt->execute();//実行されている、statusは失敗しているかどうか確認している
+$status = $stmt->execute();
 
-//3. SQL実行時にエラーがある場合STOP
-if($status === false){
-    sql_error($stmt);//ここはfuncsに飛ばしており、強制終了される
+// SQL実行時にエラーがある場合
+if ($status === false) {
+    $error = $stmt->errorInfo();
+    exit('ErrorMessage:' . $error[2]);
 }
 
-//4. 抽出データ数を取得
-$val = $stmt->fetch();//fetchでexecuteしたデータが取得され、それがvalに入る。executeとfetchはセットである。
+// 抽出データ数を取得
+$val = $stmt->fetch();
 
-//if(password_verify($lpw, $val['lpw'])){ //* PasswordがHash化の場合はこっちのIFを使う
-if( $val['id'] != ''){
-    //[!= '']はもし空欄でなかったら...の意味
-    //Login成功時 該当レコードがあればSESSIONに値を代入
+// パスワードの検証
+if ($val && password_verify($lpw, $val['lpw'])) {
+    // Login成功時 該当レコードがあればSESSIONに値を代入
     $_SESSION['chk_ssid'] = session_id();
     $_SESSION['kanri_flg'] = $val['kanri_flg'];
+    $_SESSION['user_name'] = $val['name'];
+    $_SESSION['user_id'] = $val['id'];
     header('Location: ../../index.php');
-}else{
-    //Login失敗時(Logout経由)
+} else {
+    // Login失敗時(Logout経由)
     header('Location: login.php');
 }
 
 exit();
+
+?>

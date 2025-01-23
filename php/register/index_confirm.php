@@ -20,8 +20,8 @@
     <?php
     // 入力データの取得
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $lid = $_POST['lid'];
+    $lpw = $_POST['lpw'];
 
     ?>
     <div class="card">
@@ -29,17 +29,17 @@
         <p class="card__content">こちらで登録いたします。</p>
         <div class="card__form">
             <p>ユーザー名:<?= $name ?></P>
-            <p>メールアドレス:<?= $email ?></P>
-            <p>パスワード:<?= $password ?></P>
+            <p>メールアドレス:<?= $lid ?></P>
+            <p>パスワード:<?= $lpw ?></P>
         </div>
         <!-- hiddenで隠してformを作成し、formの内容はvalueで入力する -->
         <form action="insert.php" method="post">
             <input type="hidden" name="name" value="<?= $name ?>">
-            <input type="hidden" name="email" value="<?= $email ?>">
-            <input type="hidden" name="password" value="<?= $password ?>">
+            <input type="hidden" name="lid" value="<?= $lid ?>">
+            <input type="hidden" name="lpw" value="<?= $lpw ?>">
             <input type="submit" class="submit" value="送信">
         </form>
-        <p class="submit"><a href="../index.php">修正する</a></p>
+        <p class="submit"><a href="../../index.php">修正する</a></p>
     </div>
 
 </body>

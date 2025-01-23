@@ -17,10 +17,10 @@
             <form action="index_confirm.php" method="post">
                 <label for="name">ユーザー名:</label>
                 <input type="text" class="name" name="name" placeholder="Your Name"><br>
-                <label for="email">メールアドレス:</label>
-                <input type="email" class="email" name="email" placeholder="Your Email"><br>
-                <label for="password">パスワード:</label>
-                <input type="password" class="password" name="password" placeholder="Your Password"><br>
+                <label for="lid">メールアドレス:</label>
+                <input type="lid" class="lid" name="lid" placeholder="Your Email"><br>
+                <label for="lpw">パスワード:</label>
+                <input type="lpw" class="lpw" name="lpw" placeholder="Your lpw"><br>
                 <input type="submit" class="submit" value="確認する">
             </form>
             <p class="submit"><a href="login_form.php">既に登録している方はこちら</a></p>
