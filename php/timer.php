@@ -19,7 +19,7 @@ loginCheck();
     <p class="link_title"><a href="index.php">入力</a></p>
     <p class="link_title"><a href="select.php">一覧表示</a></p>
     <p class="link_title"><a href="../index.php">使い方</a></p>
-    <p class="link_title"><a href="login/login/logout.php">ログアウト</a></p>
+    <p class="link_title"><a href="php/account/logout.php">ログアウト</a></p>
     <!-- <p class="link_title"><a href="account/login.php">ログイン</a></p> -->
 </header>
 

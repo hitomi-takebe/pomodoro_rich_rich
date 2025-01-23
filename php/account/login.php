@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>ログイン</title>
-    <link rel="stylesheet" href="../css/reset.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href=".../css/reset.css">
+    <link rel="stylesheet" href=".../css/style.css">
     <style>
         .submit {
             max-width: 300px;

@@ -27,9 +27,9 @@ $_SESSION['chk_ssid'] != session_id();
     <p class="link_title"><a href="php/select.php">一覧表示</a></p>
     <p class="link_title"><a href="index.php">使い方</a></p>
     <?php if ($_SESSION['chk_ssid'] == session_id()): ?>
-        <p class="link_title"><a href="php/logout.php">ログアウト</a></p>
+        <p class="link_title"><a href="php/account/logout.php">ログアウト</a></p>
     <?php else: ?>
-        <p class="link_title"><a href="php/login.php">ログイン</a></p>
+        <p class="link_title"><a href="php/account/login.php">ログイン</a></p>
     <?php endif; ?>
 </header>
 
