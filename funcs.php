@@ -12,10 +12,7 @@ function db_conn()
 {
   try {
     //ローカルのデータベースにアクセスするための必要な情報を変数に渡す
-    $db_name = 'yoin_account';
-    $db_host = 'mysql3104.db.sakura.ne.jp';
-    $db_id = 'yoin_account';
-    $db_pw = 'deploy_yoin';
+
 
     $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
     return $pdo;
