@@ -48,7 +48,7 @@
             <input type="hidden" name="lpw" value="<?= $lpw ?>">
             <input type="submit" class="submit" value="送信">
         </form>
-        <p class="submit"><a href="index.php">修正する</a></p>
+        <p class="submit"><a href="register_page.php">修正する</a></p>
     </div>
 
 </body>

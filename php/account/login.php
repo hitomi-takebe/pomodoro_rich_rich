@@ -22,7 +22,7 @@
     <p class="link_title"><a href="../../index.php">使い方</a></p>
     <!-- <p class="link_title"><a href="logout.php">ログアウト</a></p> -->
     <!-- <p class="link_title"><a href="login.php">ログイン</a></p> -->
-    <p class="link_title"><a href="../register/index.php">ユーザー登録</a></p>
+    <p class="link_title"><a href="../register/register_page.php">ユーザー登録</a></p>
 </header>
 
 <body>
@@ -32,7 +32,7 @@
         <div class="card__form">
             <form action="login_act.php" method="post">
                 <label for="lid">メールアドレス:</label>
-                <input type="lid" class="email" name="lid" required>
+                <input type="lid" class="email" name="lid" placeholder="Your Email" required>
                 <label for="lpw">パスワード:</label>
                 <input type="lpw" class="password" name="lpw" placeholder="Your Password"><br>
                 <input type="submit" class="submit" value="ログイン">
