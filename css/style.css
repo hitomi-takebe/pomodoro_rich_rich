@@ -31,6 +31,23 @@ header {
     border-bottom: 1px solid #dee2e6;
 }
 
+h1{
+    font-size: 1em;
+    color: #333;
+    font-weight: bold;
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+    font-family: 'Arial', sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contents {
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1.5%;
+    align-items: center;
+}
+
 .link_title {
     /* ここにスタイルを記述 */
     color: black;
@@ -94,7 +111,7 @@ header {
     margin-top: 1.5rem;
 }
 
-.name,.email,.password
+.name,.email,.password,.form,.form_detail
 {
     width: 100%;
     padding: 1rem;
@@ -107,12 +124,18 @@ header {
 
 .name:focus,
 .email:focus,
-.password:focus
+.password:focus,
+.form:focus,
+.form_detail:focus
 {
     border-color: #6bdae5;
     background-color: #fff;
 }
 
+.form_detail{
+    width: 50%;
+    background-color: #ffffff70;
+}
 /* ボタンのスタイル */
 .submit{
     width: 100%;
@@ -170,3 +193,54 @@ table tr:hover {
     background-color: #f1f1f1;
 }
 
+#progressContainer {
+    width: 50%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 20px;
+    background-color: #76c7c0;
+}
+
+.timer-button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    color: #fff;
+}
+
+.start {
+    background-color: #74dce7;
+    /* 緑色 */
+}
+
+.start:hover {
+    background-color: #39cddc;
+}
+
+.stop {
+    background-color: #2a9eab;
+    /* 赤色 */
+}
+
+.stop:hover {
+    background-color:#2fb3c2
+}
+
+.reset {
+    background-color:#89e4bb;
+    /* 青色 */
+}
+
+.reset:hover {
+    background-color: #89e4bb;
+}

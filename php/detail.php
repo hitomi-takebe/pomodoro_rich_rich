@@ -47,28 +47,31 @@ if ($status === false) {
 </header>
 
 <body>
-    <!-- タイマー -->
-    <div id="timer">
+    <div class="contents"><!-- タイマー -->
         <h1>タイマー</h1>
-        <p><span id="minutes"></span>分</p>
-        <p><span id="seconds"></span>秒</p>
-        <button id="startButton" class="submit">タイマー開始</button>
-    </div>
-
-    <!-- method, action, 各inputのnameを確認してください。  -->
-    <form method="POST" action="update.php">
-        <div class="jumbotron">
-            <h1>入力</h1>
-            <fieldset>
-                <label>todo：<input type="text" name="todo" value="<?= $result['todo'] ?>"></label><br>
-                <label>振り返り：<input type="text" name="ref" value="<?= $result['ref'] ?>"></label><br>
-                <label>次回：<input type="text" name="next" value="<?= $result['next'] ?>"></label><br>
-                <input type="hidden" name="id" value="<?= $result['id'] ?>">
-                <input type="submit" class="submit" value="修正">
-            </fieldset>
+        <div id="timer">
+            <span id="minutes">25</span>:<span id="seconds">00</span>
         </div>
-    </form>
-
+        <div id="progressContainer">
+            <div id="progressBar"></div>
+        </div>
+        <button id="startButton" class="timer-button start">開始</button>
+        <button id="stopButton" class="timer-button  stop">停止</button>
+        <button id="resetButton" class="timer-button  reset">リセット</button>
+        <!-- method, action, 各inputのnameを確認してください。  -->
+        <form method="POST" action="update.php">
+            <div class="jumbotron">
+                <h1>記録</h1>
+                <fieldset>
+                    <label>todo<br><input type="text" name="todo" class="form_detail" value="<?= $result['todo'] ?>"></label><br>
+                    <label>振り返り<br><input type="text" name="ref" class="form_detail" value="<?= $result['ref'] ?>"></label><br>
+                    <label>次回<br><input type="text" name="next" class="form_detail" value="<?= $result['next'] ?>"></label><br>
+                    <input type="hidden" name="id" value="<?= $result['id'] ?>">
+                    <input type="submit" class="submit" value="記録する">
+                </fieldset>
+            </div>
+        </form>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="../js/timer.js"></script>

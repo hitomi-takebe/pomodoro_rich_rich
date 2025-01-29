@@ -30,11 +30,11 @@ loginCheck(); // loginCheck 関数を呼び出し
             <form action="form_confirm.php" method="post">
 
                 <label for="todo">①todo</label>
-                <input type="text" class="todo" name="todo" placeholder="何をする予定？"><br>
-                <label for="ref">②振り返り</label>
-                <input type="text" class="ref" name="ref" placeholder="振り返り"><br>
-                <label for="next">③次からはこうしたい</label>
-                <input type="text" class="next" name="next" placeholder="次はこうする"><br>
+                <input type="text" name="todo" class="form" placeholder="何をする予定？"><br>
+                <!-- <label for="ref">②振り返り</label> -->
+                <input type="hidden" name="ref" class="form" placeholder="振り返り"><br>
+                <!-- <label for="next">③次からはこうしたい</label> -->
+                <input type="hidden" name="next" class="form" placeholder="次はこうする"><br>
                 <input type="submit" class="submit" value="確認する">
             </form>
         </div>

@@ -45,8 +45,8 @@
         <p class="card__content">こちらで登録いたします。</p>
         <div class="card__form">
             <p>todo:<?= $todo ?></P>
-            <p>振り返り:<?= $ref ?></P>
-            <p>次回:<?= $next ?></P>
+            <!-- <p>振り返り:<?= $ref ?></P>
+            <p>次回:<?= $next ?></P> -->
         </div>
         <!-- hiddenで隠してformを作成し、formの内容はvalueで入力する -->
         <form action="insert.php" method="post">
