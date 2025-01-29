@@ -1,8 +1,20 @@
 <?php
-$db_host = 'localhost';
-$db_id = 'root';
-$db_pw = '';
-$db_name = 'gs_db'; // 正しいデータベース名を設定
+// $db_host = 'localhost';
+// $db_id = 'root';
+// $db_pw = '';
+// $db_name = 'gs_db'; // 正しいデータベース名を設定
+
+// //try catch構文でデータベースの情報取得を実施
+// try {
+//   $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
+// } catch (PDOException $e) {
+//   exit('DBConnectError:' . $e->getMessage());
+// }
+
+
+//1.  DB接続します
+require_once('../funcs.php');
+$pdo = db_conn();
 
 // POSTデータの取得
 $name = $_POST['name'];
@@ -11,12 +23,6 @@ $lpw = password_hash($_POST['lpw'], PASSWORD_DEFAULT); // パスワードをハ�
 $kanri_flg = 0; // 管理者フラグの初期値
 $life_flg = 0; // ライフフラグの初期値
 
-//try catch構文でデータベースの情報取得を実施
-try {
-  $pdo = new PDO('mysql:dbname=' . $db_name . ';charset=utf8;host=' . $db_host, $db_id, $db_pw);
-} catch (PDOException $e) {
-  exit('DBConnectError:' . $e->getMessage());
-}
 
 $stmt = $pdo->prepare("INSERT INTO user (id, name, lid, lpw, date, kanri_flg, life_flg)
                        VALUES (NULL, :name, :lid, :lpw, now(), :kanri_flg, :life_flg)");
